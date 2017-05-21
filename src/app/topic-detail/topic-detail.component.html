@@ -1,0 +1,8 @@
+<div class="item-view-header" *ngIf="topic">
+  <h1>{{topic.title}}</h1>
+  <p class="meta">
+    by <a href="" class="">{{topic.member.username}}</a> 6 minutes ago
+  </p>
+  <div class="item-view-content" [innerHTML]="topic.content_rendered">
+  </div>
+</div>
