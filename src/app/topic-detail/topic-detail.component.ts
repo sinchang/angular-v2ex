@@ -4,6 +4,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 
 import { Topic } from '../topic';
+import { Comment } from '../comment';
 import { TopicService } from '../topic.service';
 
 @Component({
@@ -13,6 +14,7 @@ import { TopicService } from '../topic.service';
 })
 export class TopicDetailComponent implements OnInit {
   topic: Topic;
+  comments: Comment[];
 
   constructor(
     private topicService: TopicService,
@@ -24,6 +26,12 @@ export class TopicDetailComponent implements OnInit {
       .switchMap((params: Params) => this.topicService.fetchDetail(+params['id']))
       .subscribe(res => {
         this.topic = res;
+      });
+
+    this.route.params
+      .switchMap((params: Params) => this.topicService.fetchComment(+params['id']))
+      .subscribe(res => {
+        this.comments = res;
       });
   }
 }

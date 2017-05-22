@@ -6,11 +6,11 @@
         <a routerLink="/detail/{{topic.id}}" rel="noopener">{{topic.title}}</a>
       </span><br>
       <span class="meta">
-        <span><a href="">{{topic.node.title}}</a></span>
-      <span class="by">by <a href="/user/cmod" class="">{{topic.member.username}}</a></span>
+        <span><a href="/topics/{{topic.node.name}}">{{topic.node.title}}</a></span>
+      <span class="by">by <a href="/member/{{topic.member.username}}" class="">{{topic.member.username}}</a></span>
       <span class="time">3 hours ago</span>
       <span class="comments-link">
-      | <a href="/item/14386413" class="">{{topic.replies}} comments</a></span></span>
+      | <a href="/detail/{{topic.id}}" class="">{{topic.replies}} comments</a></span></span>
     </li>
   </ul>
 </div>

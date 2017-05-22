@@ -1,0 +1,12 @@
+<div class="user-view view" *ngIf="user">
+  <h1>User : {{user.username}}</h1>
+  <ul class="meta">
+    <li><span class="label">Created:</span> {{user.created | timeago}}</li>
+    <li *ngIf="user.location"><span class="label">Location:</span> {{user.location}}</li>
+  </ul>
+  <p class="links">
+    <a href="http://{{user.website}}" target="_blank" *ngIf="user.website">website</a>
+    <a href="https://{{user.twitter}}" *ngIf="user.twitter">Twitter</a>
+    <a href="https://{{user.github}}" *ngIf="user.github">GitHub</a>
+  </p>
+</div>

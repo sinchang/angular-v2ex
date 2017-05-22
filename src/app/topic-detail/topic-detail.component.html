@@ -1,8 +1,21 @@
 <div class="item-view-header" *ngIf="topic">
   <h1>{{topic.title}}</h1>
   <p class="meta">
-    by <a href="" class="">{{topic.member.username}}</a> 6 minutes ago
+    by <a href="/member/{{topic.member.username}}" class="">{{topic.member.username}}</a> 6 minutes ago
   </p>
   <div class="item-view-content" [innerHTML]="topic.content_rendered">
   </div>
+</div>
+
+<div class="item-view-comments" *ngIf="comments">
+  <p class="item-view-comments-header">
+    {{comments.length}} comments
+  </p>
+  <ul class="comment-children">
+    <li class="comment" *ngFor="let comment of comments">
+      <div class="by"><a href="/member/{{comment.member.username}}" class="">{{comment.member.username}}</a> {{comment.last_modified | timeago}}
+      </div>
+      <div class="text" [innerHTML]="comment.content_rendered"></div>
+    </li>
+  </ul>
 </div>

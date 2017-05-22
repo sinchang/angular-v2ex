@@ -7,13 +7,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TopicListComponent } from './topic-list/topic-list.component';
 import { TopicService } from './topic.service';
+import { UserService } from './user.service';
 import { TopicDetailComponent } from './topic-detail/topic-detail.component';
+import { TimeagoPipe } from './timeago.pipe';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TopicListComponent,
-    TopicDetailComponent
+    TopicDetailComponent,
+    TimeagoPipe,
+    UserComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +27,8 @@ import { TopicDetailComponent } from './topic-detail/topic-detail.component';
     AppRoutingModule
   ],
   providers: [
-    TopicService
+    TopicService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })

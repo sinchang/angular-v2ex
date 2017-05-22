@@ -14,6 +14,7 @@ a,body {
 
 a {
     text-decoration: none;
+    word-break: break-all;
 }
 
 img {
